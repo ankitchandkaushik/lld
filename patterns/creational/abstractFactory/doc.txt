@@ -1,0 +1,40 @@
+Perfect — let’s dive into the Abstract Factory Pattern, one of the most frequently asked patterns in Low-Level Design interviews, especially when dealing with families of related objects.
+
+🏭🔧 Abstract Factory Pattern – Overview
+✅ Intent:
+Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+🧱 Key Components
+
+Role	Description
+AbstractFactory	Interface for creating abstract products
+ConcreteFactory	Implements creation methods to return concrete products
+AbstractProduct	Common interface for a family of products
+ConcreteProduct	Actual implementations of abstract products
+Client	Uses only interfaces; doesn't care which factory or product is used
+🎯 Real-World Analogy
+Imagine you're building a cross-platform UI toolkit. You want to support:
+
+Windows UI
+
+Mac UI
+
+Each platform has its own version of:
+
+Button
+
+TextBox
+
+You use an abstract factory to produce the right set based on the platform.
+
+
+====================================================================
+in the Abstract Factory pattern, you can use a static method to select and return the appropriate concrete factory. This is actually a very common and practical enhancement of the pattern, especially when your client needs a simple way to choose the factory at runtime.
+
+Using a static method to select the concrete factory:
+
+Does not break the Abstract Factory pattern.
+
+Simplifies usage for the client.
+
+Keeps object creation centralized without losing polymorphism.
