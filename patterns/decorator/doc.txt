@@ -1,0 +1,24 @@
+🎁 Decorator Pattern – Quick Summary
+Intent:
+Attach additional responsibilities or behavior to an object dynamically without modifying its structure.
+
+💡 Real-World Analogy
+Think of a pizza: You start with a base, then add toppings like cheese, veggies, or meat.
+
+Each topping “wraps” the original pizza and adds its own cost/calories/description.
+
+🧱 Key Components
+
+Component	Role
+Component (interface)	The base type for core and decorated objects
+ConcreteComponent	The original object to be decorated
+Decorator (abstract class)	Wraps the component and forwards method calls
+ConcreteDecorators	Add extra behavior (e.g., logging, cost)
+✅ Use Cases in Interviews
+Designing a customizable food item (Pizza, Sandwich, Coffee)
+
+Input/output streams in Java (BufferedReader, FileReader)
+
+UI components with optional features (scrollbars, borders)
+
+Access control or logging wrappers
