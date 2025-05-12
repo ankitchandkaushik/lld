@@ -1,0 +1,24 @@
+🔍 Observer Pattern - Quick Summary
+Intent:
+Define a one-to-many dependency so that when one object (the Subject) changes state, all its dependents (the Observers) are notified and updated automatically.
+
+💡 Real-World Analogy
+YouTube Channel (Subject) – Notifies all Subscribers (Observers) when a new video is uploaded.
+
+Stock Market Ticker – Updates all registered traders’ dashboards when prices change.
+
+🧱 Core Components
+Subject – Maintains a list of observers, provides attach() and notify().
+
+Observer – Has an update() method to respond to notifications.
+
+ConcreteSubject – Holds state and notifies observers on change.
+
+ConcreteObserver – Implements the update logic.
+
+✅ Ideal For
+Event-driven systems (e.g., UI listeners, Pub/Sub)
+
+Notification systems (e.g., email/SMS updates)
+
+Real-time data sync (e.g., collaborative editors, stock tickers)
