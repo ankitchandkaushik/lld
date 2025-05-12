@@ -130,3 +130,24 @@ public class LoggingClient {
 Fully adheres to Open/Closed Principle – you can add new factories without touching old ones.
 
 Useful when you want to inject factories or use DI frameworks like Spring.
+
+
+========================================================
+
+
+🤔 So When To Choose What?
+
+Scenario	Best Fit
+Need a simple central method to create objects (no polymorphism)	Static factory method
+Want extensibility: allow users to plug in new factories	Interface-based Factory Method
+Want to enforce structure + share behavior in factory classes	Abstract class-based Factory Method
+🧠 Rule of Thumb:
+Start with static factory if you’re unsure.
+
+Move to interface or abstract class if your code needs to:
+
+Create multiple variants dynamically.
+
+Be testable or mockable.
+
+Be extended by third parties.

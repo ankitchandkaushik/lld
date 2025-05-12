@@ -3,11 +3,22 @@ package patterns.creational.factory.Logger;
 public class App {
 
     public static void main(String[] args) {
-        ILogger consoleLogger = LoggerFactory.getLogger("console");
-        ILogger fileLogger = LoggerFactory.getLogger("file");
+        ILogger consoleLogger = LoggerFactoryStatic.getLogger("console");
+        ILogger fileLogger = LoggerFactoryStatic.getLogger("file");
         consoleLogger.log("Hello");
         fileLogger.log("Hello");
-        ILogger dbLogger = LoggerFactory.getLogger("db");
+        // ILogger dbLogger = LoggerFactoryStatic.getLogger("db");
+
+
+
+
+
+
+        // =====================================================
+        // using abstract creator
+        ConsoleFactory cf = new ConsoleFactory();
+        ILogger cLogger = cf.createLogger();
+        cLogger.log("Hello abstract");
     }
     
     

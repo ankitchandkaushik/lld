@@ -1,6 +1,6 @@
 package patterns.creational.factory.Logger;
 
-public class LoggerFactory {
+public class LoggerFactoryStatic {
     public static ILogger getLogger(String type) {
         if("console".equals(type)) {
             return new ConsoleLogger();
