@@ -1,4 +1,4 @@
-package patterns.decorator.pizza;
+package patterns.structural.decorator.pizza;
 
 public interface IPizza {
     public String getDescription();

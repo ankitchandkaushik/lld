@@ -1,0 +1,56 @@
+The Proxy Design Pattern is a structural pattern that provides a substitute or placeholder for another object to control access to it.
+
+✅ Purpose
+To add an additional layer between the client and the real object, often to:
+
+Add access control
+
+Lazy-load expensive objects
+
+Log or cache results
+
+Remote call abstraction
+
+✅ Participants
+Role	Description
+Subject (interface)	Common interface for RealSubject and Proxy
+RealSubject	Actual object that does the real work
+Proxy	Controls access to RealSubject. May perform extra work before/after delegating the call
+
+
+=======================================
+
+✅ Types of Proxy
+Type	Use Case
+Virtual Proxy	Delay object creation (e.g., lazy loading)
+Protection Proxy	Control access (e.g., user permissions)
+Remote Proxy	Access objects over the network (e.g., RMI)
+Smart Proxy	Add extra logic (e.g., caching, logging)
+
+✅ Real-World Uses in Production
+Use Case	Details
+Hibernate / JPA	Lazy loading proxies for database entities
+Spring AOP	Proxies used for logging, transactions, security
+gRPC / RMI	Stub proxy hides networking from client
+Browser service workers	Proxy for caching assets
+API Gateways	Act as reverse proxies for real backend services
+
+✅ Advantages
+Adds control without changing real object
+
+Useful for performance (lazy loading, caching)
+
+Encapsulates access logic (security, validation)
+
+❌ Disadvantages
+Adds complexity
+
+Can introduce unexpected behavior if overused
+
+✅ Summary
+Feature	Value
+Pattern Type	Structural
+Intent	Provide a surrogate or placeholder for another object
+Real-World Analogy	Credit card as a proxy to your bank account
+Used In	Hibernate, Spring AOP, network stubs, API gateways
+

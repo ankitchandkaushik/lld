@@ -1,4 +1,4 @@
-package patterns.builder.user;
+package patterns.creational.builder.user;
 
 public class App {
 

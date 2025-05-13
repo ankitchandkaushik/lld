@@ -1,4 +1,4 @@
-package patterns.decorator.pizza;
+package patterns.structural.decorator.pizza;
 
 public class Sausage extends PizzaDecorator{
     
