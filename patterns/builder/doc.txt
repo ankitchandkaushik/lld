@@ -1,0 +1,122 @@
+
+
+🧱 Builder Pattern
+✅ Intent:
+To construct a complex object step-by-step, separating the construction process from the actual representation.
+
+🔧 When to Use:
+When the construction of an object involves many steps or optional parameters.
+
+When you want to create immutable objects with various configurations.
+
+When you don’t want to pass a long list of constructor parameters.
+
+🧠 Key Benefits:
+Avoids constructor overloads.
+
+Makes code more readable.
+
+Supports immutability.
+
+Easy to extend without breaking existing client code.
+
+What is StringBuilder?
+StringBuilder is a mutable sequence of characters used to efficiently construct strings. Unlike String (which is immutable), StringBuilder allows you to modify the same object, appending or inserting text step-by-step.
+
+It follows the Builder pattern, as it:
+
+Builds a complex object (a string),
+
+Through a sequence of steps (append, insert, delete),
+
+And finally returns a finished result (toString()).
+
+
+
+
+============================================
+🔒 How Builder Pattern Enforces Immutability
+All fields in the main class are private final.
+
+No setters in the main class — once set in the constructor, values can't change.
+
+The only way to set values is through the Builder, which is mutable.
+
+The build() method in the Builder returns a fully initialized object, and after that, it can’t be changed.
+
+✅ Example
+java
+Copy
+Edit
+public class User {
+    private final String name;
+    private final int age;
+    private final String email;
+
+    private User(Builder builder) {
+        this.name = builder.name;
+        this.age = builder.age;
+        this.email = builder.email;
+    }
+
+    // No setters - read-only after creation
+    public String getName() { return name; }
+    public int getAge() { return age; }
+    public String getEmail() { return email; }
+
+    public static class Builder {
+        private String name;
+        private int age;
+        private String email;
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setAge(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
+    }
+}
+🔐 After User object is built:
+java
+Copy
+Edit
+User u = new User.Builder()
+    .setName("Rama")
+    .setAge(30)
+    .setEmail("rama@example.com")
+    .build();
+Now u is completely immutable:
+
+You can’t change its name, age, or email.
+
+There are no setters.
+
+All fields are final.
+
+💡 Why This is Useful
+Makes your objects thread-safe without extra synchronization.
+
+Simplifies reasoning about object behavior.
+
+Encourages safe and consistent construction of objects.
+
+Avoids bugs from changing state after creation.
+
+⚠️ Note:
+Builder class is mutable (on purpose), but the built object is immutable.
+
+If you give access to the Builder after building the object, don’t allow reuse unless that’s intended.
+
