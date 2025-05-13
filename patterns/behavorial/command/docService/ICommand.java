@@ -1,4 +1,4 @@
-package patterns.command.docService;
+package patterns.behavorial.command.docService;
 
 
 public interface ICommand {
